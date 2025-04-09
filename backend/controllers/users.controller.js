@@ -86,4 +86,18 @@ export const logoutUser = (req, res) => {
     res.clearCookie('auth_token'); // Clear the JWT cookie
     res.json({ msg: 'Logout successful' });
   };
+
+export const getUserProfile = async (req, res) => {
+  try {
+    const { userId } = req.params;
+
+    const user = await User.findById(userId).select('-password');
+    const posts = await Post.find({ author: userId }).sort({ createdAt: -1 });
+
+    res.json({ user, posts });
+  } catch (error) {
+    res.status(400).json({ error: 'User not found' });
+  }
+};
+
   

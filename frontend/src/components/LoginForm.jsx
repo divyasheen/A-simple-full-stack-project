@@ -1,8 +1,9 @@
-
-
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -38,6 +39,7 @@ const LoginForm = () => {
 
       const data = await res.json();
       alert(data.msg); // Login success message
+      navigate('/home');
     } catch (err) {
       console.error('Login error:', err);
       setError('An error occurred while logging in.');

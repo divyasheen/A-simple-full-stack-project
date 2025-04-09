@@ -5,10 +5,12 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import mongoose from 'mongoose';
 import userRouter from './routes/users.router.js';
+import postRoutes from './routes/post.routes.js';
 
 
 dotenv.config();
 const app = express();
+
 // DB connection
 try {
   mongoose.connection.on("connected", () =>
@@ -29,6 +31,7 @@ app.use(cookieParser());
 app.use('/uploads', express.static('uploads'))
 
 app.use('/users', userRouter);
+app.use('/posts', postRoutes);
 
 
 const port = process.env.PORT;
