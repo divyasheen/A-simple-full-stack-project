@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import morgan from 'morgan';
 import cors from 'cors';
 import mongoose from 'mongoose';
-import userRouter from './users.router.js';
+import userRouter from './routes/users.router.js';
 
 dotenv.config();
 const app = express();
@@ -29,5 +29,5 @@ app.use('/uploads', express.static('uploads'))
 app.use('/users', userRouter);
 
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 app.listen(port, console.log(`Server is running on: http://localhost:${port}`));

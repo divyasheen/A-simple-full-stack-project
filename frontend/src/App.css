@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: #fdf6e3; /* subtle light beige */
+  padding: 20px;
+  margin: 0;
+  color: #333;
+}
+
+.container {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 1.6rem;
+  color: #222;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="file"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #f9f9f9;
+}
+
+.form-group button {
+  background-color: #2c7be5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.form-group button:hover {
+  background-color: #155ac1;
+}
+
+img {
+  border-radius: 6px;
+  margin-top: 10px;
+  max-width: 100%;
+  height: auto;
+}
+
+#userlist .container {
+  margin-top: 15px;
+  padding: 15px;
+  background-color: #f9fafb;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}

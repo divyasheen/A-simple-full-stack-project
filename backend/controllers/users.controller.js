@@ -1,4 +1,4 @@
-import User from "./users.model.js";
+import User from "../models/users.model.js";
 
 
 export const registerUser = async(req, res, next) => {
@@ -9,7 +9,7 @@ export const registerUser = async(req, res, next) => {
             password: req.body.password,
             profilepic: req.myFileName
         });
-        newUser.profilepic = `http://localhost:3000/uploads/${newUser.profilepic}`
+        newUser.profilepic = `http://localhost:5000/uploads/${newUser.profilepic}`
         await newUser.save();
         res.json({msg: 'register success', newUser});
 
