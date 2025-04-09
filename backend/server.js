@@ -2,12 +2,13 @@ import express from 'express';
 import dotenv from 'dotenv';
 import morgan from 'morgan';
 import cors from 'cors';
+import cookieParser from 'cookie-parser';
 import mongoose from 'mongoose';
 import userRouter from './routes/users.router.js';
 
+
 dotenv.config();
 const app = express();
-
 // DB connection
 try {
   mongoose.connection.on("connected", () =>
@@ -24,6 +25,7 @@ try {
 app.use(cors());
 app.use(express.json())
 app.use(morgan('dev'));
+app.use(cookieParser()); 
 app.use('/uploads', express.static('uploads'))
 
 app.use('/users', userRouter);
